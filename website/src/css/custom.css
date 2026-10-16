@@ -1,30 +1,365 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap');
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #9a6a28;
+  --ifm-color-primary-dark: #805720;
+  --ifm-color-primary-darker: #744e1d;
+  --ifm-color-primary-darkest: #5c3e17;
+  --ifm-color-primary-light: #ae7b35;
+  --ifm-color-primary-lighter: #bc8d49;
+  --ifm-color-primary-lightest: #d1aa73;
+  --ifm-font-family-base: 'DM Sans', system-ui, sans-serif;
+  --ifm-heading-font-family: 'DM Sans', system-ui, sans-serif;
+  --ifm-code-font-size: 90%;
+  --ifm-navbar-height: 4.75rem;
+  --site-background: #f6f5f1;
+  --site-panel: #eeece6;
+  --site-heading: #171714;
+  --site-muted: #6f6d66;
+  --site-border: #d9d6cd;
+  --site-mono: 'DM Mono', monospace;
+  --docusaurus-highlighted-code-line-bg: rgba(154, 106, 40, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+html,
+body {
+  background: var(--site-background);
+}
+
+body {
+  color: var(--site-heading);
+}
+
+.navbar {
+  border-bottom: 1px solid var(--site-border);
+  background: color-mix(in srgb, var(--site-background) 92%, transparent);
+  box-shadow: none;
+}
+
+.navbar__title,
+.navbar__link,
+.footer__title {
+  font-weight: 500;
+}
+
+.navbar__title {
+  letter-spacing: -0.03em;
+}
+
+.navbar__link {
+  color: var(--site-muted);
+  font-family: var(--site-mono);
+  font-size: 0.72rem;
+}
+
+.navbar__link:hover {
+  color: var(--site-heading);
+}
+
+.footer {
+  background: #171714;
+}
+
+.footer__link-item,
+.footer__title {
+  color: #d8d5cc;
+}
+
+.footer__copyright {
+  color: #87847b;
+  font-family: var(--site-mono);
+  font-size: 0.7rem;
+}
+
+.button {
+  border: 0;
+  border-radius: 0.2rem;
+  font-family: var(--site-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.button--primary {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.button--primary:hover {
+  background: var(--ifm-color-primary-dark);
+  color: #fff;
+}
+
+.theme-doc-layout {
+  background: var(--site-background);
+}
+
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--site-border);
+  background: var(--site-panel);
+}
+
+.theme-doc-sidebar-menu {
+  padding: 1.5rem 0.75rem;
+}
+
+.menu__link {
+  border-radius: 0.25rem;
+  color: var(--site-muted);
+  font-size: 0.82rem;
+}
+
+.menu__link:hover {
+  background: transparent;
+  color: var(--site-heading);
+}
+
+.menu__link--active {
+  background: var(--site-background);
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.theme-doc-markdown {
+  max-width: 760px;
+  padding: 1.5rem 0 4rem;
+}
+
+.theme-doc-markdown > h1:first-child {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 1;
+}
+
+.theme-doc-markdown > h2,
+.blog-post__content h2 {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--site-border);
+  font-size: 2rem;
+}
+
+.theme-doc-markdown > h3 {
+  margin-top: 2.5rem;
+  font-size: 1.4rem;
+}
+
+.theme-doc-markdown p,
+.theme-doc-markdown li,
+.blog-post__content p,
+.blog-post__content li {
+  color: var(--site-muted);
+  font-size: 1.03rem;
+  line-height: 1.85;
+}
+
+.theme-doc-markdown strong,
+.blog-post__content strong {
+  color: var(--site-heading);
+}
+
+.theme-doc-breadcrumbs {
+  margin-bottom: 2.5rem;
+  font-family: var(--site-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.theme-doc-toc-desktop {
+  padding-top: 2.5rem;
+}
+
+.table-of-contents a {
+  color: var(--site-muted);
+}
+
+.table-of-contents a:hover,
+.table-of-contents .table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+}
+
+.theme-code-block {
+  margin: 2rem 0;
+  border: 1px solid var(--site-border);
+  border-radius: 0.55rem;
+  box-shadow: 0 1rem 3rem rgba(20, 18, 14, 0.08);
+}
+
+.theme-code-block pre {
+  margin: 0;
+  border-radius: 0.55rem;
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+
+.theme-admonition {
+  border: 1px solid var(--site-border);
+  border-left: 3px solid var(--ifm-color-primary);
+  border-radius: 0.25rem;
+  background: var(--site-panel);
+  box-shadow: none;
+}
+
+.pagination-nav {
+  gap: 1rem;
+  border-top-color: var(--site-border);
+}
+
+.pagination-nav__link {
+  border-color: var(--site-border);
+  border-radius: 0.35rem;
+  background: var(--site-panel);
+}
+
+.pagination-nav__sublabel,
+.blog-post__meta,
+.blog-list-page article time {
+  color: var(--site-muted);
+  font-family: var(--site-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.pagination-nav__label {
+  color: var(--site-heading);
+}
+
+.blog-list-page article,
+.blog-post {
+  max-width: 820px;
+}
+
+.blog-list-page article {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--site-border);
+}
+
+.blog-list-page article h2 a,
+.blog-post h1 {
+  color: var(--site-heading);
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.05;
+}
+
+.blog-post {
+  padding-top: 3rem;
+}
+
+.blog-post__content {
+  max-width: 740px;
+}
+
+code {
+  border: 1px solid var(--site-border);
+  border-radius: 0.2rem;
+  background: var(--site-panel);
+  color: var(--ifm-color-primary-dark);
+  font-family: var(--site-mono);
+}
+
+.theme-doc-markdown,
+.blog-post {
+  --ifm-heading-color: var(--site-heading);
+}
+
+.theme-doc-markdown h1,
+.theme-doc-markdown h2,
+.theme-doc-markdown h3,
+.blog-post h1,
+.blog-post h2,
+.blog-post h3 {
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+
+.table-of-contents {
+  font-family: var(--site-mono);
+  font-size: 0.72rem;
+}
+
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+table th {
+  background: var(--site-panel);
+  color: var(--site-heading);
+  font-family: var(--site-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+table td,
+table th {
+  border-color: var(--site-border);
+}
+
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #d5a85d;
+  --ifm-color-primary-dark: #bd8c3d;
+  --ifm-color-primary-darker: #ad7e32;
+  --ifm-color-primary-darkest: #8e6528;
+  --ifm-color-primary-light: #dfb978;
+  --ifm-color-primary-lighter: #e7c58e;
+  --ifm-color-primary-lightest: #f0d9ad;
+  --site-background: #171714;
+  --site-panel: #211f1b;
+  --site-heading: #f3f0e8;
+  --site-muted: #aaa69b;
+  --site-border: #3a3730;
+  --docusaurus-highlighted-code-line-bg: rgba(213, 168, 93, 0.14);
+}
+
+[data-theme='dark'] .navbar {
+  background: color-mix(in srgb, var(--site-background) 92%, transparent);
+}
+
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background: #1b1a17;
+}
+
+[data-theme='dark'] .menu__link--active {
+  background: var(--site-panel);
+}
+
+@media screen and (max-width: 996px) {
+  .theme-doc-markdown {
+    padding: 1rem 0 3rem;
+  }
+
+  .theme-doc-toc-mobile {
+    margin-bottom: 1.5rem;
+    border-color: var(--site-border);
+    background: var(--site-panel);
+  }
+
+  .theme-doc-sidebar-container {
+    background: var(--site-background);
+  }
+
+  .theme-doc-sidebar-menu {
+    padding: 0.75rem;
+  }
+
+  .blog-post {
+    padding-top: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .theme-doc-markdown > h1:first-child,
+  .blog-post h1 {
+    font-size: 2.6rem;
+  }
+
+  .theme-doc-markdown p,
+  .theme-doc-markdown li,
+  .blog-post__content p,
+  .blog-post__content li {
+    font-size: 0.98rem;
+  }
 }

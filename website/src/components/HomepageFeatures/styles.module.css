@@ -1,11 +1,115 @@
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+  padding: 7rem 0;
+  background: var(--site-panel);
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.sectionIntro {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.sectionIntro :global(.eyebrow) {
+  align-self: start;
+  margin-top: 0.6rem;
+}
+
+.sectionIntro h2 {
+  margin: 0;
+  color: var(--site-heading);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+}
+
+.sectionIntro > p:last-child {
+  margin: 0;
+  color: var(--site-muted);
+  line-height: 1.7;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  border: 1px solid var(--site-border);
+  background: var(--site-border);
+}
+
+.featureCard {
+  position: relative;
+  min-height: 19rem;
+  padding: 1.75rem;
+  background: var(--site-panel);
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.featureCard:hover {
+  z-index: 1;
+  background: var(--site-background);
+  transform: translateY(-0.25rem);
+}
+
+.featureMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  color: var(--site-muted);
+  font-family: var(--site-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.featureCard h3 {
+  max-width: 15rem;
+  margin-bottom: 0.8rem;
+  color: var(--site-heading);
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.featureCard p {
+  max-width: 18rem;
+  margin: 0;
+  color: var(--site-muted);
+  line-height: 1.65;
+}
+
+.featureArrow {
+  position: absolute;
+  right: 1.75rem;
+  bottom: 1.75rem;
+  color: var(--ifm-color-primary);
+  font-family: var(--site-mono);
+}
+
+@media screen and (max-width: 996px) {
+  .features {
+    padding: 5rem 1.5rem;
+  }
+
+  .sectionIntro {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sectionIntro > p:last-child {
+    grid-column: 2;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sectionIntro {
+    display: block;
+  }
+
+  .sectionIntro h2 {
+    margin: 1rem 0;
+  }
 }

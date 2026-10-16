@@ -1,58 +1,63 @@
 import type {ReactNode} from 'react';
-import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  number: string;
+  label: string;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    number: '01',
+    label: 'Foundations',
+    title: 'A clear path from idea to publish',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Understand the stages, roles, and handoffs that make a content
+        operation predictable.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    number: '02',
+    label: 'Patterns',
+    title: 'Practical patterns, not abstract theory',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Reusable guidance for prompts, research, review, and the systems that
+        connect them.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    number: '03',
+    label: 'Reference',
+    title: 'A living reference for your team',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Keep decisions discoverable with technical documentation that is easy
+        to scan, compare, and apply.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({number, label, title, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+    <article className={styles.featureCard}>
+      <div className={styles.featureMeta}>
+        <span>{number}</span>
+        <span>{label}</span>
       </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
+      <Heading as="h3">{title}</Heading>
+      <p>{description}</p>
+      <span className={styles.featureArrow} aria-hidden="true">
+        -&gt;
+      </span>
+    </article>
   );
 }
 
@@ -60,9 +65,17 @@ export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+        <div className={styles.sectionIntro}>
+          <p className="eyebrow">What you will find here</p>
+          <Heading as="h2">Less noise. Better systems.</Heading>
+          <p>
+            Everything is organized to help you move from a blank page to a
+            repeatable publishing workflow.
+          </p>
+        </div>
+        <div className={styles.featureGrid}>
+          {FeatureList.map((props) => (
+            <Feature key={props.number} {...props} />
           ))}
         </div>
       </div>
