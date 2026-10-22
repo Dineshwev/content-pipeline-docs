@@ -30,7 +30,7 @@ spreadsheet vendor.
 
 The owner-oriented companion explains the business decision:
 
-[When a Spreadsheet Is Still the Right Business Tool](../owner-oriented-articles/owner-spreadsheet-right-tool)
+[When a Spreadsheet Is Still the Right Business Tool](../../owner-oriented-articles/comparisons/owner-spreadsheet-right-tool)
 
 ## The problem
 

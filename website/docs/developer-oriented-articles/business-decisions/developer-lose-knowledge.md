@@ -31,7 +31,7 @@ particular documentation product.
 
 The owner-oriented companion explains why this matters as a business grows:
 
-[Why Fast-Growing Teams Lose Knowledge](../owner-oriented-articles/owner-lose-knowledge)
+[Why Fast-Growing Teams Lose Knowledge](../../owner-oriented-articles/business-decisions/owner-lose-knowledge)
 
 ## The problem
 

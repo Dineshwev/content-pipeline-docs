@@ -30,7 +30,7 @@ with a particular database or search provider.
 
 The owner-oriented companion explains why this matters to the business:
 
-[The Business Case for a Single Source of Truth](../owner-oriented-articles/owner-single-source-of-truth)
+[The Business Case for a Single Source of Truth](../../owner-oriented-articles/business-decisions/owner-single-source-of-truth)
 
 ## The problem
 

@@ -29,7 +29,7 @@ particular project-management product.
 
 The owner-oriented companion discusses the organizational decision:
 
-[How Much Process Is Enough for a Small Team?](../owner-oriented-articles/owner-process-small-team)
+[How Much Process Is Enough for a Small Team](../../owner-oriented-articles/business-decisions/owner-process-small-team)
 
 ## The problem
 

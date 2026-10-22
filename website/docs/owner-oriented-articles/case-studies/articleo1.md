@@ -53,7 +53,7 @@ The workflow:
 
 The companion technical article explains the implementation in detail:
 
-[How I Built a Human-Gated AI Content Pipeline for an Open-Source Directory](./articled1)
+[How I Built a Human-Gated AI Content Pipeline for an Open-Source Directory](../../developer-oriented-articles/case-studies/articled1)
 
 This analysis does not claim a measured percentage reduction in cost or
 processing time. A representative batch benchmark has not yet been completed.
