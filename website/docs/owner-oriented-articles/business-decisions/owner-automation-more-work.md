@@ -80,6 +80,11 @@ After automation:
 
 These figures are an example format, not a benchmark. Measure the actual
 workflow and include the time spent by every team affected.
+
+
+The companion technical article explains the implementation in detail:
+
+[Detecting When Automation Creates More Work Than It Saves](../../developer-oriented-articles/business-decisions/developer-automation-more-work)
 
 ## Understand the work around the automation
 

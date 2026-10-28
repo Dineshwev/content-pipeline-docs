@@ -1,0 +1,14 @@
+{
+  "name": "content-pipeline-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Technical publication on content pipelines, architecture, and technology decisions.",
+  "scripts": {
+    "build": "npm --prefix website run build",
+    "start": "npm --prefix website run start",
+    "typecheck": "npm --prefix website run typecheck",
+    "serve": "npm --prefix website run serve"
+  },
+  "author": "Dinesh Regar",
+  "license": "MIT"
+}

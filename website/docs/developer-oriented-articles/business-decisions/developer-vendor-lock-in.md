@@ -34,6 +34,11 @@ It is most useful when:
 The purpose is not to avoid managed services. It is to make the dependency
 visible, bounded, and recoverable enough for its business criticality.
 
+
+The owner-oriented companion explains the business decision:
+
+[The Hidden Business Risk of Depending on One Vendor](../../owner-oriented-articles/business-decisions/owner-vendor-lock-in)
+
 ## The problem: an export is not a recovery plan
 
 Teams often record that a vendor supports export and consider the risk handled.

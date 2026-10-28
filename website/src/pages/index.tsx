@@ -1,51 +1,44 @@
 import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import FeaturedArticles from '@site/src/components/FeaturedArticles';
+import ArticleIndex from '@site/src/components/ArticleIndex';
 
 import styles from './index.module.css';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+function HomepageHeader(): ReactNode {
   return (
     <header className={styles.heroBanner}>
       <div className="container">
-        <p className={styles.eyebrow}>A practical guide to reliable content systems</p>
+        <p className={styles.eyebrow}>Content Pipeline Docs</p>
         <Heading as="h1" className={styles.heroTitle}>
-          Build a content pipeline that
-          <span> scales with your ideas.</span>
+          Practical technology research.{' '}
+          <span>Clearer decisions.</span>
         </Heading>
         <p className={styles.heroSubtitle}>
-          {siteConfig.title} brings the workflows, patterns, and technical
-          decisions behind modern content operations into one clear workspace.
+          Evidence-based articles exploring how software systems work, how
+          technology choices compare, and what their trade-offs mean in
+          practice.
         </p>
         <div className={styles.buttons}>
-          <Link
+          <a
             className="button button--primary button--lg"
+            href="#articles-index">
+            Explore Articles
+          </a>
+          <Link
+            className={styles.secondaryButton}
             to="/docs/intro">
-            Explore the docs
+            Publication Overview <span aria-hidden="true">→</span>
           </Link>
-          <Link className={styles.secondaryButton} to="/blog">
-            Read the latest notes <span aria-hidden="true">-&gt;</span>
+          <Link className={styles.secondaryButton} to="/docs/category/developer-oriented-articles">
+            Developer Track <span aria-hidden="true">→</span>
           </Link>
-        </div>
-        <div className={styles.pipelinePreview} aria-label="Content pipeline overview">
-          <div className={styles.previewHeader}>
-            <span className={styles.statusDot} />
-            <span>content-pipeline / current</span>
-            <code>v1.0</code>
-          </div>
-          <div className={styles.previewSteps}>
-            {['Outline', 'Research', 'Write', 'Review'].map((step, index) => (
-              <div className={styles.previewStep} key={step}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <strong>{step}</strong>
-                {index < 3 && <i aria-hidden="true" />}
-              </div>
-            ))}
-          </div>
+          <Link className={styles.secondaryButton} to="/docs/category/owner-oriented-articles">
+            Owner Track <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
     </header>
@@ -53,14 +46,15 @@ function HomepageHeader() {
 }
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={siteConfig.title}
-      description="Documentation for designing and operating a modern content pipeline.">
+      title="Practical technology research. Clearer decisions."
+      description="Evidence-based articles exploring how software systems work, how technology choices compare, and what their trade-offs mean in practice.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <FeaturedArticles />
+        <ArticleIndex />
       </main>
     </Layout>
   );

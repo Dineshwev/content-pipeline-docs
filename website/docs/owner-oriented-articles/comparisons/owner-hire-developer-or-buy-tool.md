@@ -68,6 +68,11 @@ Before choosing, compare:
 The comparison should cover a defined period, such as three years. A first-year
 subscription price is not comparable to a development estimate that excludes
 future maintenance.
+
+
+The companion technical article explains the implementation in detail:
+
+[Build or Buy: A Technical Evaluation Method](../../developer-oriented-articles/comparisons/developer-hire-developer-or-buy-tool)
 
 ## Option A: Buy an existing tool
 

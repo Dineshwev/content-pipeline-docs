@@ -1,4 +1,8 @@
 {
-  "label": "Developer-Oriented Articles",
-  "position": 2
+  "label": "Developer-Oriented Research",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "slug": "/category/developer-oriented-articles"
+  }
 }

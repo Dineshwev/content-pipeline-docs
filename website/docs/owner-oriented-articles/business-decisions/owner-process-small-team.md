@@ -63,6 +63,11 @@ days.
 
 The goal is not to measure every minute. The goal is to identify whether a
 specific process gap is recurring often enough to deserve attention.
+
+
+The companion technical article explains the implementation in detail:
+
+[Designing Lightweight Process for a Small Engineering Team](../../developer-oriented-articles/business-decisions/developer-process-small-team)
 
 ## The two extremes
 

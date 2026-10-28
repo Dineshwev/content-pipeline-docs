@@ -86,6 +86,11 @@ A simple incident record can make the cost visible:
 These figures are examples of the information to collect, not benchmark
 results. The purpose is to find whether conflicting versions are occasional
 annoyances or a recurring business problem.
+
+
+The companion technical article explains the implementation in detail:
+
+[Implementing a Single Source of Truth Without Creating Data Drift](../../developer-oriented-articles/business-decisions/developer-single-source-of-truth)
 
 ## What “single source of truth” actually means
 

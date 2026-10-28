@@ -76,6 +76,11 @@ Separate what is known from what is promised:
 
 Vendor claims are useful inputs, but they should not be treated as test results
 until the business verifies the parts that matter.
+
+
+The companion technical article explains the implementation in detail:
+
+[Helping Non-Technical Buyers Evaluate Technology](../../developer-oriented-articles/comparisons/developer-choose-technology-without-code)
 
 ## Start with the business outcome
 

@@ -73,6 +73,11 @@ Use a small incident log:
 | Duplicate record | 1 hour | Work repeated | None |
 
 These figures are examples of the evidence to collect, not benchmark results.
+
+
+The companion technical article explains the implementation in detail:
+
+[Evaluating Whether a Spreadsheet Is Still the Right Tool](../../developer-oriented-articles/comparisons/developer-spreadsheet-right-tool)
 
 ## What a spreadsheet is good at
 

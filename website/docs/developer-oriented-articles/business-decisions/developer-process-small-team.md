@@ -31,6 +31,11 @@ The owner-oriented companion discusses the organizational decision:
 
 [How Much Process Is Enough for a Small Team](../../owner-oriented-articles/business-decisions/owner-process-small-team)
 
+
+The owner-oriented companion explains the business decision:
+
+[How Much Process Is Enough for a Small Team?](../../owner-oriented-articles/business-decisions/owner-process-small-team)
+
 ## The problem
 
 Small teams often keep process in memory. That feels efficient because there

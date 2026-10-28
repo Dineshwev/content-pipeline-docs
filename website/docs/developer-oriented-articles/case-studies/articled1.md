@@ -1,3 +1,8 @@
+---
+title: "How I Built a Human-Gated AI Content Pipeline for an Open-Source Directory"
+sidebar_position: 1
+description: "A TypeScript workflow combining GitHub APIs, Firecrawl, Groq, and Supabase with human editorial review."
+---
 # How I Built a Human-Gated AI Content Pipeline for an Open-Source Directory
 
 ## Short answer
@@ -20,6 +25,10 @@ AI model.
 You do not need to use the same stack to follow the design. The important ideas
 are the boundary between human review and automation, the use of multiple
 sources, structured output, and honest result reporting.
+
+The owner-oriented companion explains the business decision and strategic trade-offs:
+
+[Should Your Business Use AI to Maintain a Software Directory?](../../owner-oriented-articles/case-studies/articleo1)
 
 ## The problem
 

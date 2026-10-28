@@ -30,6 +30,11 @@ This article is for developers and engineers building or maintaining:
 It is especially relevant when the same answer appears in chat, tickets,
 documents, code comments, and personal notes with no clear authority.
 
+
+The owner-oriented companion explains the business decision:
+
+[The Real Cost of Rewriting the Same Information](../../owner-oriented-articles/business-decisions/owner-real-cost-rewriting)
+
 ## The problem: duplicated text is often duplicated decision logic
 
 Repeated writing is not always a copy-and-paste problem. A person may rewrite

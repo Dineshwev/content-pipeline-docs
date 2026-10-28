@@ -34,6 +34,11 @@ The technical reviewer does not own the business decision. The reviewer makes
 the cost, behavior, and evidence precise enough for the accountable owner to
 make one.
 
+
+The owner-oriented companion explains the business decision:
+
+[How to Measure Whether a New Tool Is Worth Its Cost](../../owner-oriented-articles/business-decisions/owner-measure-tool-cost)
+
 ## The problem: license price is not tool value
 
 A tooling evaluation often begins with two annual subscription prices. That

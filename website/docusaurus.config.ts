@@ -2,34 +2,34 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+// Deployment environment detection
+const isGitHubActions = Boolean(process.env.GITHUB_ACTIONS);
+const isVercel = Boolean(process.env.VERCEL);
+
+const defaultUrl = isGitHubActions
+  ? 'https://dineshwev.github.io'
+  : 'https://content-pipeline-docs.vercel.app';
+
+const defaultBaseUrl = isGitHubActions ? '/content-pipeline-docs/' : '/';
 
 const config: Config = {
-  title: 'content-pipeline-docs',
-  tagline: 'A practical guide to reliable content systems',
+  title: 'Content Pipeline Docs',
+  tagline: 'Practical technology research. Clearer decisions.',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
-  url: 'https://dineshwev.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/content-pipeline-docs/',
+  // Set the production url and baseUrl of the site
+  url: process.env.URL || defaultUrl,
+  baseUrl: process.env.BASE_URL || defaultBaseUrl,
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'dineshwev', // Usually your GitHub org/user name.
-  projectName: 'content-pipeline-docs', // Usually your repo name.
+  organizationName: 'dineshwev',
+  projectName: 'content-pipeline-docs',
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -41,32 +41,18 @@ const config: Config = {
 
   themes: ['@docusaurus/theme-mermaid'],
 
+  clientModules: [require.resolve('./src/clientModules/readingProgress.ts')],
+
   presets: [
     [
       'classic',
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/dineshwev/content-pipeline-docs/tree/main/docs/',
+            'https://github.com/Dineshwev/content-pipeline-docs/tree/main/website/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false, // Default template blog disabled in favor of articles publication
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -75,25 +61,29 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
+      defaultMode: 'light',
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'content-pipeline',
+      title: 'Content Pipeline Docs',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Content Pipeline Docs Logo',
         src: 'img/logo.svg',
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          to: '/',
+          label: 'Home',
           position: 'left',
-          label: 'Tutorial',
+          exact: true,
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          to: '/docs/intro',
+          label: 'Articles',
+          position: 'left',
+        },
         {
           href: 'https://github.com/Dineshwev/content-pipeline-docs',
           label: 'GitHub',
@@ -105,50 +95,63 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Publication',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Overview & Guidelines',
               to: '/docs/intro',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Developer Research Track',
+              to: '/docs/category/developer-oriented-articles',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Owner Decisions Track',
+              to: '/docs/category/owner-oriented-articles',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Categories',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: 'Developer Case Studies',
+              to: '/docs/category/developer-case-studies',
             },
             {
-              label: 'GitHub',
+              label: 'Owner Case Studies',
+              to: '/docs/category/owner-case-studies',
+            },
+            {
+              label: 'Technology Comparisons',
+              to: '/docs/category/developer-comparisons',
+            },
+            {
+              label: 'Business Decisions',
+              to: '/docs/category/developer-business-decisions',
+            },
+          ],
+        },
+        {
+          title: 'Repository',
+          items: [
+            {
+              label: 'GitHub Source',
               href: 'https://github.com/Dineshwev/content-pipeline-docs',
+            },
+            {
+              label: 'Issue Tracker',
+              href: 'https://github.com/Dineshwev/content-pipeline-docs/issues',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Dinesh Regar. Content Pipeline Docs — Evidence-based technical research and practical decision frameworks.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['bash', 'typescript', 'javascript', 'json', 'yaml', 'markdown', 'sql'],
     },
   } satisfies Preset.ThemeConfig,
 };

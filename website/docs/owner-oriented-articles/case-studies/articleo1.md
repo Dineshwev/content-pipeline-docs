@@ -1,3 +1,8 @@
+---
+title: "Should Your Business Use AI to Maintain a Software Directory?"
+sidebar_position: 1
+description: "A strategic decision framework for evaluating human-gated AI workflows versus manual curation."
+---
 # Should Your Business Use AI to Maintain a Software Directory?
 
 ## Short answer

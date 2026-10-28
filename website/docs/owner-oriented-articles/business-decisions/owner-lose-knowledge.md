@@ -78,6 +78,11 @@ A simple knowledge-loss review can make the problem visible:
 These are diagnostic signals, not proof that documentation alone will solve
 the problem. The root cause may also be unclear ownership, poor access, weak
 training, or a process that changes too quickly.
+
+
+The companion technical article explains the implementation in detail:
+
+[Building a Knowledge Retention System for a Fast-Growing Team](../../developer-oriented-articles/business-decisions/developer-lose-knowledge)
 
 ## What counts as important knowledge
 

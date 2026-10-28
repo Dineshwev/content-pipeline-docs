@@ -35,6 +35,11 @@ It is especially useful when:
 The engineer's job is not to make the decision on behalf of the business. It
 is to make the important risks visible and testable.
 
+
+The owner-oriented companion explains the business decision:
+
+[How to Choose Technology When You Cannot Evaluate the Code](../../owner-oriented-articles/comparisons/owner-choose-technology-without-code)
+
 ## The problem: technical confidence is not decision evidence
 
 A technical review can go wrong in two opposite ways.

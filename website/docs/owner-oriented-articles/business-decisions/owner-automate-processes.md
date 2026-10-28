@@ -63,6 +63,11 @@ A simple inventory may look like this:
 
 The table is a starting point. Observe the work before assigning a final
 decision.
+
+
+The companion technical article explains the implementation in detail:
+
+[How to Decide Which Business Processes to Automate: An Engineering Method](../../developer-oriented-articles/business-decisions/developer-automate-processes)
 
 ## Distinguish task automation from decision automation
 

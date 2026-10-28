@@ -33,6 +33,11 @@ The owner-oriented companion explains the business decision in more detail:
 
 [Should You Hire a Developer or Buy a Tool](../../owner-oriented-articles/comparisons/owner-hire-developer-or-buy-tool)
 
+
+The owner-oriented companion explains the business decision:
+
+[Should You Hire a Developer or Buy a Tool?](../../owner-oriented-articles/comparisons/owner-hire-developer-or-buy-tool)
+
 ## The problem
 
 Build-versus-buy discussions often compare a subscription price with a
