@@ -75,6 +75,30 @@ export default function ArticleIndex(): ReactNode {
   const [activeTrack, setActiveTrack] = useState<TrackFilter>('All');
   const [searchQuery, setSearchQuery] = useState('');
 
+  const categoryCounts = useMemo(() => {
+    return {
+      All: articles.length,
+      'Developer Research': articles.filter((a) => a.track === 'Developer Research').length,
+      'Case Studies': articles.filter((a) => a.category === 'Case Studies').length,
+      'Technology Comparisons': articles.filter((a) => a.category === 'Technology Comparisons').length,
+      'Business Decisions': articles.filter((a) => a.category === 'Business Decisions').length,
+    };
+  }, []);
+
+  const handleCategoryChange = (tabKey: CategoryFilter) => {
+    setActiveCategory(tabKey);
+    if (tabKey === 'Developer Research' && activeTrack === 'Owner Decisions') {
+      setActiveTrack('All');
+    }
+  };
+
+  const handleTrackChange = (trackKey: TrackFilter) => {
+    setActiveTrack(trackKey);
+    if (trackKey === 'Owner Decisions' && activeCategory === 'Developer Research') {
+      setActiveCategory('All');
+    }
+  };
+
   const filteredArticles = useMemo(() => {
     return articles.filter((article) => {
       // Category filtering
@@ -142,8 +166,9 @@ export default function ArticleIndex(): ReactNode {
                   role="tab"
                   aria-selected={isActive}
                   className={`${styles.tabButton} ${isActive ? styles.tabButtonActive : ''}`}
-                  onClick={() => setActiveCategory(tab.key)}>
+                  onClick={() => handleCategoryChange(tab.key)}>
                   {tab.label}
+                  <span className={styles.tabCount}>{categoryCounts[tab.key]}</span>
                 </button>
               );
             })}
@@ -160,7 +185,7 @@ export default function ArticleIndex(): ReactNode {
                     key={track.key}
                     type="button"
                     className={`${styles.trackButton} ${isActive ? styles.trackButtonActive : ''}`}
-                    onClick={() => setActiveTrack(track.key)}>
+                    onClick={() => handleTrackChange(track.key)}>
                     {track.label}
                   </button>
                 );

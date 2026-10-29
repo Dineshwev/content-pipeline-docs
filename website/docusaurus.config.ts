@@ -2,15 +2,9 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// Deployment environment detection
-const isGitHubActions = Boolean(process.env.GITHUB_ACTIONS);
-const isVercel = Boolean(process.env.VERCEL);
-
-const defaultUrl = isGitHubActions
-  ? 'https://dineshwev.github.io'
-  : 'https://content-pipeline-docs.vercel.app';
-
-const defaultBaseUrl = isGitHubActions ? '/content-pipeline-docs/' : '/';
+// Deployment configuration: GitHub Pages is the primary target
+const defaultUrl = 'https://dineshwev.github.io';
+const defaultBaseUrl = '/content-pipeline-docs/';
 
 const config: Config = {
   title: 'Content Pipeline Docs',
@@ -22,8 +16,9 @@ const config: Config = {
   },
 
   // Set the production url and baseUrl of the site
-  url: process.env.URL || defaultUrl,
-  baseUrl: process.env.BASE_URL || defaultBaseUrl,
+  // By default, targets GitHub Pages at https://dineshwev.github.io/content-pipeline-docs/
+  url: process.env.URL || (process.env.VERCEL ? 'https://content-pipeline-docs.vercel.app' : defaultUrl),
+  baseUrl: process.env.BASE_URL || (process.env.VERCEL ? '/' : defaultBaseUrl),
 
   organizationName: 'dineshwev',
   projectName: 'content-pipeline-docs',

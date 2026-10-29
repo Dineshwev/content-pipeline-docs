@@ -77,6 +77,22 @@
   font-weight: 600;
 }
 
+.tabCount {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--site-panel) 80%, black 8%);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--site-muted);
+}
+
+.tabButtonActive .tabCount {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
 .filterRow {
   display: flex;
   flex-wrap: wrap;
